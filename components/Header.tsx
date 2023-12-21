@@ -8,11 +8,11 @@ const Header: React.FC = () => {
   const isActive: (pathname: string) => boolean = (pathname) =>
     router.pathname === pathname;
 
-  const { data: session, status } = useSession();
+  //const { data: session, status } = useSession();
 
   let left = (
     <div className='left'>
-      <Link href='/'>
+      <Link href='/' legacyBehavior>
         <a className='bold' data-active={isActive('/')}>
           Feed
         </a>
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
 
   let right = null;
 
-  if (status === 'loading') {
+ /* if (status === 'loading') {
     left = (
       <div className='left'>
         <Link href='/'>
@@ -80,9 +80,9 @@ const Header: React.FC = () => {
         `}</style>
       </div>
     );
-  }
+  }*/
 
-  if (!session) {
+  /*if (!session) {
     right = (
       <div className='right'>
         <Link href='/api/auth/signin'>
@@ -191,7 +191,7 @@ const Header: React.FC = () => {
         `}</style>
       </div>
     );
-  }
+  }*/
 
   return (
     <nav>
